@@ -7,15 +7,18 @@ echo "Zcash installed"
 
 # Setup configuration
 mkdir -p ~/.zcash
-echo "addnode=mainnet.z.cash" >~/.zcash/zcash.conf
-echo "rpcuser=username" >>~/.zcash/zcash.conf
-echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >>~/.zcash/zcash.conf
+echo "addnode=stratum.zcash.nicehash.com:3357" >~/.zcash/zcash.conf
+echo "rpcuser=wallet" >>~/.zcash/zcash.conf
+echo "rpcpassword=x" >>~/.zcash/zcash.conf
 echo "Zcash configuration complete"
 
 # Enable CPU mining
-echo 'gen=1' >> ~/.zcash/zcash.conf
-echo "genproclimit=$(nproc)" >> ~/.zcash/zcash.conf
-echo 'equihashsolver=tromp' >> ~/.zcash/zcash.conf
+# echo 'gen=1' >> ~/.zcash/zcash.conf
+# echo "genproclimit=$(nproc)" >> ~/.zcash/zcash.conf
+# echo 'equihashsolver=tromp' >> ~/.zcash/zcash.conf
+
+# Start Zcash
+zcashd
 
 # Install nheqminer
 yaourt -S boost
