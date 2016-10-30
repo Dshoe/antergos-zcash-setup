@@ -16,6 +16,3 @@ echo "Zcash configuration complete"
 echo 'gen=1' >> ~/.zcash/zcash.conf
 echo "genproclimit=$(nproc)" >> ~/.zcash/zcash.conf
 echo 'equihashsolver=tromp' >> ~/.zcash/zcash.conf
-
-# Start Zcash
-zcashd
