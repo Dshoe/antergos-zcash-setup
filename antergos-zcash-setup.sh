@@ -16,3 +16,15 @@ echo "Zcash configuration complete"
 echo 'gen=1' >> ~/.zcash/zcash.conf
 echo "genproclimit=$(nproc)" >> ~/.zcash/zcash.conf
 echo 'equihashsolver=tromp' >> ~/.zcash/zcash.conf
+
+# Install nheqminer
+yaourt -S boost
+mkdir -p ~/Code/zcash
+cd ~/Code/zcash
+git clone --recursive https://github.com/kost/nheqminer.git
+cd nheqminer/nheqminer
+mkdir build
+cd build
+cmake -DXENON=2 ..
+make
+echo "nheqminer compiled"
